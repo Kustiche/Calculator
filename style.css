@@ -426,7 +426,6 @@ body {
   color: #000000;
 }
 .calculator__clear {
-  display: none;
   width: 19px;
   height: 19px;
   color: rgba(255, 255, 255, 0.8);
@@ -441,7 +440,7 @@ body {
   background-color: #B0B041;
   color: #DBD9D9;
 }
-.calculator__clear.active {
+.calculator__clear:active {
   color: #2D2C2C;
   background-color: #B0B041;
 }
@@ -496,7 +495,7 @@ body {
   max-width: 275px;
   width: 100%;
 }
-.calculator__number {
+.calculator__workspace-button {
   width: 54px;
   font-size: 32px;
   line-height: 54px;
@@ -504,37 +503,12 @@ body {
   border-radius: 15px;
   transition: background-color 0.4s;
 }
-.calculator__number:hover {
+.calculator__workspace-button:hover {
   background-color: #595959;
 }
-.calculator__number.active {
+.calculator__workspace-button:active {
   background-color: #333333;
 }
-.calculator__dot {
-  width: 54px;
-  font-size: 32px;
-  line-height: 54px;
-  color: #FFFFFF;
-  border-radius: 15px;
-  transition: background-color 0.4s;
-}
-.calculator__dot:hover {
-  background-color: #595959;
-}
-.calculator__dot.active {
-  background-color: #333333;
-}
-.calculator__cancel {
-  width: 54px;
+.calculator__workspace-button--cancel {
   font-size: 20px;
-  line-height: 54px;
-  color: #FFFFFF;
-  border-radius: 15px;
-  transition: background-color 0.4s;
-}
-.calculator__cancel:hover {
-  background-color: #595959;
-}
-.calculator__cancel.active {
-  background-color: #333333;
 }/*# sourceMappingURL=style.css.map */

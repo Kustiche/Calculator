@@ -120,7 +120,6 @@ body
     color: $black
 
   &__clear
-    display: none
     width: 19px
     height: 19px
     color: rgba(255, 255, 255, 0.8)
@@ -133,7 +132,7 @@ body
     &:hover
       background-color: $roti
       color: $alto
-    &.active
+    &:active
       color: $mi-shaft
       background-color: $roti
 
@@ -187,7 +186,7 @@ body
     max-width: 275px
     width: 100%
 
-  &__number
+  &__workspace-button
     width: 54px
     font-size: 32px
     line-height: 54px
@@ -196,29 +195,7 @@ body
     transition: background-color .4s
     &:hover
       background-color: $scorpion
-    &.active
+    &:active
       background-color: $shaft
-
-  &__dot
-    width: 54px
-    font-size: 32px
-    line-height: 54px
-    color: $white
-    border-radius: 15px
-    transition: background-color .4s
-    &:hover
-      background-color: $scorpion
-    &.active
-      background-color: $shaft
-
-  &__cancel
-    width: 54px
-    font-size: 20px
-    line-height: 54px
-    color: $white
-    border-radius: 15px
-    transition: background-color .4s
-    &:hover
-      background-color: $scorpion
-    &.active
-      background-color: $shaft
+    &--cancel
+      font-size: 20px
