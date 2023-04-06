@@ -34,18 +34,15 @@ workspace.addEventListener('click', function(event) {
   }else if (clickBtn && !operator && !clickDot) {
     answer.textContent += targetText;
     firstNumber = answer.textContent;
-    console.log(firstNumber);
   }else if (clickOperator && !clickDot) {
     operator = targetText;
     answer.textContent = operator;
-    console.log(operator);
   }else if (clickBtn && operator && !clickDot) {
     if (answer.textContent === operator) {
       answer.textContent = '';
     }
     answer.textContent += targetText;
     secondNumber = answer.textContent;
-    console.log(secondNumber);
   }else if(clickEqually) {
     answer.textContent = Math.round(calc(operator, +firstNumber, +secondNumber));
   };
