@@ -89,9 +89,11 @@ equals.addEventListener('click', function() {
     return;
   };
 
-  answer.textContent = Math.round(calc(operator, +firstNumber, +secondNumber));
+  const result = Math.round(calc(operator, +firstNumber, +secondNumber));
 
-  if (answer.textContent === 'NaN' || answer.textContent === 'Infinity') {
+  answer.textContent = result;
+
+  if (Number.isNaN(result) || Number.POSITIVE_INFINITY === result) {
     answer.textContent = 'На 0 делить нельзя';
   };
 
