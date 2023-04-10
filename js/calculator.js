@@ -36,19 +36,22 @@ workspace.addEventListener('click', function(event) {
   if (!isPoint && clickDot && (!operator || secondNumber)) {
     if (!firstNumber) {
       answer.textContent = 0;
-    }
+    };
     answer.textContent += targetText;
+  }else if(clickBtn && !firstNumber && !clickDot && !operator && !clickCancel){
+    answer.textContent = '';
+    answer.textContent += targetText;
+    firstNumber = answer.textContent;
   }else if (clickBtn && !operator && !clickDot && !clickCancel) {
     answer.textContent += targetText;
     firstNumber = answer.textContent;
-    console.log(firstNumber);
-  }else if (clickOperator && !clickDot && firstNumber && !clickInnerOperators) {
+  }else if (clickOperator && !secondNumber && !clickDot && firstNumber && !clickInnerOperators) {
     operator = targetText;
     answer.textContent = operator;
   }else if (clickBtn && operator && !clickCancel && !clickDot) {
     if (answer.textContent === operator) {
       answer.textContent = '';
-    }
+    };
     answer.textContent += targetText;
     secondNumber = answer.textContent;
   };
@@ -87,6 +90,14 @@ equals.addEventListener('click', function() {
   };
 
   answer.textContent = Math.round(calc(operator, +firstNumber, +secondNumber));
+
+  if (answer.textContent === 'NaN' || answer.textContent === 'Infinity') {
+    answer.textContent = 'На 0 делить нельзя';
+  };
+
+  operator = '';
+  firstNumber = '';
+  secondNumber = '';
 });
 
 function calc(operator, firstNumber, secondNumber) {
@@ -115,9 +126,5 @@ function calc(operator, firstNumber, secondNumber) {
       break;
   };
 
-  if (Number.isNaN(result) || Number.isFinite(result)) {
-    result = 'На 0 делить нельзя';
-  };
-
-  return result;
+  return result
 };
