@@ -79,7 +79,7 @@ body
 .calculator
   padding: 155px 0
 
-  &__conrainer
+  &__container
     display: flex
     justify-content: center
 
@@ -87,6 +87,7 @@ body
     display: flex
     flex-direction: column
     align-items: center
+    margin-right: 20px
     max-width: 300px
     width: 100%
 
@@ -199,3 +200,43 @@ body
       background-color: $shaft
     &--cancel
       font-size: 20px
+
+  &__results
+    display: flex
+    flex-direction: column
+    max-width: 200px
+    width: 100%
+
+  &__button
+    width: 100%
+    min-height: 55px
+    font-size: 24px
+    line-height: 47px
+    background-color: $bird-flower
+    border-radius: 15px 15px 0 0
+
+  &__results-history
+    display: none
+    padding-top: 15px
+    padding-bottom: 20px
+    width: 100%
+    max-height: 420px
+    overflow-y: scroll
+    border-radius: 0px 0px 15px 15px
+    background-color: $mine-shaft
+    &.active
+      display: flex
+      flex-direction: column
+      align-items: center
+
+  &__text
+    margin-bottom: 5px
+    padding: 5px 10px
+    font-size: 20px
+    line-height: 30px
+    color: $white
+    background-color: $shaft
+    border-radius: 50%
+    cursor: pointer
+    &:last-child
+      margin-bottom: 0

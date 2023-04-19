@@ -93,6 +93,8 @@ equals.addEventListener('click', function() {
 
   answer.textContent = result;
 
+  newResult();
+
   if (Number.isNaN(result) || Number.POSITIVE_INFINITY === result) {
     answer.textContent = 'На 0 делить нельзя';
   };
@@ -130,3 +132,37 @@ function calc(operator, firstNumber, secondNumber) {
 
   return result
 };
+
+// История результатов
+
+const resultsHistoryButton = document.querySelector('.calculator__button');
+const resultsHistory = document.querySelector('.calculator__results-history');
+let resultHistoryText = document.querySelector('.calculator__text');
+
+function openingClosingStory() {
+  resultsHistory.classList.toggle('active');
+  if (resultsHistory.classList.contains('active')) {
+    resultsHistoryButton.textContent = 'Close history';
+  }else {
+    resultsHistoryButton.textContent = 'Open history';
+  };
+};
+
+function newResult() {
+  let newResult = document.createElement('span');
+  newResult.classList.add('calculator__text');
+  resultsHistory.prepend(newResult);
+  newResult.textContent = answer.textContent;
+};
+
+function deletingResult() {
+  resultsHistory.remove(resultHistoryText);
+};
+
+resultsHistoryButton.addEventListener('click', () => {
+  openingClosingStory();
+});
+
+resultHistoryText.addEventListener('click', () => {
+  deletingResult();
+});
