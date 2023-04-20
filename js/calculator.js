@@ -137,7 +137,6 @@ function calc(operator, firstNumber, secondNumber) {
 
 const resultsHistoryButton = document.querySelector('.calculator__button');
 const resultsHistory = document.querySelector('.calculator__results-history');
-let resultHistoryText = document.querySelector('.calculator__text');
 
 function openingClosingStory() {
   resultsHistory.classList.toggle('active');
@@ -156,13 +155,16 @@ function newResult() {
 };
 
 function deletingResult() {
-  resultsHistory.remove(resultHistoryText);
+  resultsHistory.remove(resultsHistory.target);
 };
 
 resultsHistoryButton.addEventListener('click', () => {
   openingClosingStory();
 });
 
-resultHistoryText.addEventListener('click', () => {
-  deletingResult();
+resultsHistory.addEventListener('click', (event) => {
+  const clickResult = isContainsClass(event.target.className, 'calculator__text');
+  if (clickResult) {
+    deletingResult();
+  };
 });
