@@ -154,8 +154,8 @@ function newResult() {
   newResult.textContent = answer.textContent;
 };
 
-function deletingResult() {
-  resultsHistory.remove(resultsHistory.target);
+function deletingResult(event) {
+  event.target.remove();
 };
 
 resultsHistoryButton.addEventListener('click', () => {
@@ -165,6 +165,6 @@ resultsHistoryButton.addEventListener('click', () => {
 resultsHistory.addEventListener('click', (event) => {
   const clickResult = isContainsClass(event.target.className, 'calculator__text');
   if (clickResult) {
-    deletingResult();
+    deletingResult(event);
   };
 });
